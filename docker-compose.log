@@ -1,0 +1,3 @@
+Creating network "app_default" with the default driver
+Creating volume "app_db_data" with default driver
+Creating saep_bd ...
