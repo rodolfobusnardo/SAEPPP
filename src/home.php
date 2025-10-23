@@ -8,6 +8,14 @@ require_login();
 
 $pageTitle = "Itens Encontrados";
 
+// --- Bloco de verificação de permissão (Segunda camada de segurança) ---
+if (isset($_SESSION['role']) && $_SESSION['role'] === 'common') {
+    // Redireciona para a página principal permitida para este usuário
+    header('Location: register_item_page.php?error=' . urlencode('Acesso não permitido.'));
+    exit(); // Encerra o script para garantir que o redirecionamento ocorra.
+}
+// --- FIM do bloco ---
+
 // Busca categorias para os filtros
 $filter_categories = [];
 $sql_filter_cats = "SELECT id, name FROM categories ORDER BY name ASC";
