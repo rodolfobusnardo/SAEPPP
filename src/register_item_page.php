@@ -1,7 +1,8 @@
 <?php
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
+// Bloco removido - A sessão é iniciada por 'auth.php' ou 'header.php'
+// if (session_status() == PHP_SESSION_NONE) {
+//     session_start();
+// }
 require_once 'auth.php';
 require_once 'db_connect.php';
 require_login('index.php?error=pleaselogin');
